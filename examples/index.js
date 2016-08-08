@@ -28,8 +28,8 @@ function hasWebGL() {
 
 var control = L.Routing.control({
   waypoints: [
-    L.latLng(37.752, -122.418),
-    L.latLng(37.779, -122.391)
+    L.latLng(41.49417,-81.68317), 
+    L.latLng(41.49417,-81.68317)
   ],
   // You can get your own Mapzen turn-by-turn & search API key from the Mapzen developer portal (https://mapzen.com/developers/)
   geocoder: L.Control.Geocoder.mapzen('search-sMsPwC'),
