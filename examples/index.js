@@ -33,8 +33,16 @@ var control = L.Routing.control({
   ],
   // You can get your own Mapzen turn-by-turn & search API key from the Mapzen developer portal (https://mapzen.com/developers/)
   geocoder: L.Control.Geocoder.mapzen('search-sMsPwC'),
-  reverseWaypoints: true,
-  router: L.Routing.mapzen('valhalla-DRrUBwt', {costing: 'auto'}),
+  autocomplete: true,
+  params: {
+          sources: 'osm',
+          'boundary.country': 'USA',
+          'focus.point.lat': 41.49417, 
+          'focus.point.lon': -81.68317, 
+          layers: 'venue,address'
+  },         // https://mapzen.com/documentation/search/search/#prioritize-within-a-circular-region
+  reverseWaypoints: true, 
+  router: L.Routing.mapzen('valhalla-DRrUBwt', {costing: 'auto', {"directions_options":{"units":"miles"}} ),
   formatter: new L.Routing.mapzenFormatter(),
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>'
 }).addTo(map);
