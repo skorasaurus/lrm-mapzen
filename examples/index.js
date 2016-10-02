@@ -28,13 +28,13 @@ function hasWebGL() {
 
 var control = L.Routing.control({
   waypoints: [
-    L.latLng(37.752, -122.418),
-    L.latLng(37.779, -122.391)
+    L.latLng(41.49417, -81.68317),
+    L.latLng(41.49417, -81.68317)
   ],
   // You can get your own Mapzen turn-by-turn & search API key from the Mapzen developer portal (https://mapzen.com/developers/)
-  geocoder: L.Control.Geocoder.mapzen('search-RH8pVLv'),
+  geocoder: L.Control.Geocoder.mapzen('valhalla-DRrUBwt'),
   reverseWaypoints: true,
-  router: L.Routing.mapzen('valhalla-PVA4Y8g', {costing: 'auto'}),
+  router: L.Routing.mapzen('valhalla-DRrUBwt', {costing: 'auto'}),
   formatter: new L.Routing.mapzenFormatter(),
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>'
 }).addTo(map);
