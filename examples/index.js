@@ -32,7 +32,15 @@ var control = L.Routing.control({
     L.latLng(41.49417, -81.68317)
   ],
   // You can get your own Mapzen turn-by-turn & search API key from the Mapzen developer portal (https://mapzen.com/developers/)
-  geocoder: L.Control.Geocoder.mapzen('valhalla-DRrUBwt'),
+  geocoder: L.Control.Geocoder.mapzen('valhalla-DRrUBwt', {
+  params: {
+     focus: [41.49417, -81.68317], // this can also written as {lat: 50.5, lon: 30.5} or L.latLng(50.5, 30.5)
+      placeholder: 'Search nearby [50.5, 30.5]',
+          sources: 'oa',
+          'boundary.country': 'USA'  
+  }}
+  ),
+
   reverseWaypoints: true,
   router: L.Routing.mapzen('valhalla-DRrUBwt', {costing: 'auto'}),
   formatter: new L.Routing.mapzenFormatter(),
