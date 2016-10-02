@@ -28,25 +28,22 @@ function hasWebGL() {
 
 var control = L.Routing.control({
   waypoints: [
-    L.latLng(41.49417, -81.68317),
-    L.latLng(41.49417, -81.68317)
+    L.latLng(37.752, -122.418),
+    L.latLng(37.779, -122.391)
   ],
   // You can get your own Mapzen turn-by-turn & search API key from the Mapzen developer portal (https://mapzen.com/developers/)
-  geocoder: L.Control.Geocoder.mapzen('valhalla-DRrUBwt', {
+  geocoder: L.Control.Geocoder.mapzen('search-RH8pVLv', {
   params: {
-     // not sure if I should use 
-     // focus.point.lat as described at https://mapzen.com/documentation/search/autocomplete/#global-scope-local-focus
-     focus: [41.49417, -81.68317], // this can also written as {lat: 50.5, lon: 30.5} or L.latLng(50.5, 30.5)
-      placeholder: 'Search nearby [50.5, 30.5]',
-      sources: 'oa',
-      'boundary.country': 'USA'  
+         sources: 'oa',
+         'boundary.country': 'USA',
+         //'focus.point.lat': 41.49417, 
+         //'focus.point.lon': -81.68317
   }}
-  ),
+  ), 
 
   reverseWaypoints: true,
-  router: L.Routing.mapzen('valhalla-DRrUBwt', {costing: 'auto'}),
-  formatter: new L.Routing.mapzenFormatter({units: 'imperial'}),
-
+  router: L.Routing.mapzen('valhalla-PVA4Y8g', {costing: 'auto'}),
+  formatter: new L.Routing.mapzenFormatter(),
   summaryTemplate:'<div class="start">{name}</div><div class="info {costing}">{distance}, {time}</div>'
 }).addTo(map);
 
