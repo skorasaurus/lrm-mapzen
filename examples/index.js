@@ -28,16 +28,16 @@ function hasWebGL() {
 
 var control = L.Routing.control({
   waypoints: [
-    L.latLng(37.752, -122.418),
-    L.latLng(37.779, -122.391)
+    L.latLng(41.49417, -81.68317),
+    L.latLng(41.49417, -81.68417) // chokes if you use the same two waypoints)
   ],
   // You can get your own Mapzen turn-by-turn & search API key from the Mapzen developer portal (https://mapzen.com/developers/)
   geocoder: L.Control.Geocoder.mapzen('search-RH8pVLv', {
   params: {
          sources: 'oa',
          'boundary.country': 'USA',
-         //'focus.point.lat': 41.49417, 
-         //'focus.point.lon': -81.68317
+         'focus.point.lat': 41.49417, 
+         'focus.point.lon': -81.68317
   }}
   ), 
 
