@@ -36,8 +36,9 @@ var control = L.Routing.control({
   params: {
          sources: 'oa',
          'boundary.country': 'USA',
-         'focus.point.lat': 41.49417, 
-         'focus.point.lon': -81.68317
+         focus: [41.49417, -81.68317],
+    //     'focus.point.lat': 41.49417, 
+      //   'focus.point.lon': -81.68317
   }}
   ), 
 
